@@ -1,0 +1,63 @@
+---
+import { Icon } from "astro-icon/components"
+---
+
+<section id="problema" class="py-20 bg-white">
+	<div class="container mx-auto px-4">
+		<div class="text-center mb-16">
+			<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">EL PROBLEMA</h2>
+			<div class="w-20 h-1 bg-teal-500 mx-auto"></div>
+		</div>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+			<div
+				class="bg-white rounded-lg p-6 shadow-lg border-t-4 border-red-500 hover:shadow-xl transition-shadow"
+			>
+				<div class="text-red-500 mb-4">
+					<Icon name="lucide:alert-circle" class="w-12 h-12" />
+				</div>
+				<h3 class="text-xl font-semibold mb-3 text-gray-900">Millones sin reclamar</h3>
+				<p class="text-gray-600">
+					Cada año, millones de pesos en reembolsos por licencias médicas quedan sin ser reclamados.
+				</p>
+			</div>
+
+			<div
+				class="bg-white rounded-lg p-6 shadow-lg border-t-4 border-red-500 hover:shadow-xl transition-shadow"
+			>
+				<div class="text-red-500 mb-4">
+					<Icon name="lucide:file-question" class="w-12 h-12" />
+				</div>
+				<h3 class="text-xl font-semibold mb-3 text-gray-900">Procesos complejos</h3>
+				<p class="text-gray-600">
+					Trámites burocráticos y requisitos técnicos dificultan la recuperación efectiva de fondos.
+				</p>
+			</div>
+
+			<div
+				class="bg-white rounded-lg p-6 shadow-lg border-t-4 border-red-500 hover:shadow-xl transition-shadow"
+			>
+				<div class="text-red-500 mb-4">
+					<Icon name="lucide:clock" class="w-12 h-12" />
+				</div>
+				<h3 class="text-xl font-semibold mb-3 text-gray-900">Falta de tiempo</h3>
+				<p class="text-gray-600">
+					Las empresas carecen del tiempo y conocimiento especializado para gestionar estos
+					procesos.
+				</p>
+			</div>
+
+			<div
+				class="bg-white rounded-lg p-6 shadow-lg border-t-4 border-red-500 hover:shadow-xl transition-shadow"
+			>
+				<div class="text-red-500 mb-4">
+					<Icon name="lucide:ban" class="w-12 h-12" />
+				</div>
+				<h3 class="text-xl font-semibold mb-3 text-gray-900">Riesgo de prescripción</h3>
+				<p class="text-gray-600">
+					Los fondos no reclamados a tiempo pueden prescribir, generando pérdidas definitivas.
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
