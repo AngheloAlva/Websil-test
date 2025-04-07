@@ -1,0 +1,110 @@
+---
+import Image from "astro/components/Image.astro"
+---
+
+<header class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-sm shadow">
+	<nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+		<a
+			href="#hero"
+			class="text-2xl font-bold text-blue-800 flex items-center hover:text-teal-600 transition-colors"
+		>
+			<Image alt="Websil logo" width={32} height={32} src="/favicon.svg" class="w-6 h-6 mr-2" />
+			Websil
+		</a>
+
+		<ul class="hidden md:flex gap-8">
+			<li><a href="#problema" class="hover:text-blue-800 transition-colors">Problema</a></li>
+			<li><a href="#solucion" class="hover:text-blue-800 transition-colors">Solución</a></li>
+			<li>
+				<a href="#como-funciona" class="hover:text-blue-800 transition-colors">¿Cómo funciona?</a>
+			</li>
+			<li><a href="#beneficios" class="hover:text-blue-800 transition-colors">Beneficios</a></li>
+			<li><a href="#impacto" class="hover:text-blue-800 transition-colors">Impacto</a></li>
+			<li><a href="#planes" class="hover:text-blue-800 transition-colors">Planes</a></li>
+			<li><a href="#contacto" class="hover:text-blue-800 transition-colors">Contacto</a></li>
+		</ul>
+
+		<button id="menu-toggle" class="md:hidden">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				class="h-6 w-6"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke="currentColor"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M4 6h16M4 12h16M4 18h16"></path>
+			</svg>
+		</button>
+	</nav>
+
+	<!-- Mobile menu -->
+	<div id="mobile-menu" class="md:hidden h-0 overflow-hidden transition-all">
+		<ul class="px-4 py-2 bg-white/80 backdrop-blur-sm">
+			<li>
+				<a href="#problema" class="block py-2 hover:text-blue-800 transition-colors">Problema</a>
+			</li>
+			<li>
+				<a href="#solucion" class="block py-2 hover:text-blue-800 transition-colors">Solución</a>
+			</li>
+			<li>
+				<a href="#como-funciona" class="block py-2 hover:text-blue-800 transition-colors">
+					¿Cómo funciona?
+				</a>
+			</li>
+			<li>
+				<a href="#beneficios" class="block py-2 hover:text-blue-800 transition-colors">Beneficios</a
+				>
+			</li>
+			<li>
+				<a href="#impacto" class="block py-2 hover:text-blue-800 transition-colors">Impacto</a>
+			</li>
+			<li><a href="#planes" class="block py-2 hover:text-blue-800 transition-colors">Planes</a></li>
+			<li>
+				<a href="#contacto" class="block py-2 hover:text-blue-800 transition-colors">Contacto</a>
+			</li>
+		</ul>
+	</div>
+</header>
+
+<script>
+	const menuToggle = document.getElementById("menu-toggle")
+	const mobileMenu = document.getElementById("mobile-menu")
+
+	menuToggle?.addEventListener("click", () => {
+		mobileMenu?.classList.toggle("h-[297px]")
+	})
+
+	// Close mobile menu when clicking a link
+	const mobileLinks = mobileMenu?.querySelectorAll("a")
+	mobileLinks?.forEach((link) => {
+		link.addEventListener("click", () => {
+			mobileMenu?.classList.add("h-0")
+		})
+	})
+
+	// Smooth scroll for all anchor links
+	document.querySelectorAll("a[href^='#']").forEach((element) => {
+		const anchor = element as HTMLAnchorElement
+		anchor.addEventListener("click", function (this: HTMLAnchorElement, e: Event) {
+			e.preventDefault()
+			const targetId = this.getAttribute("href")?.substring(1)
+			const targetElement = document.getElementById(targetId || "")
+
+			if (targetElement) {
+				targetElement.scrollIntoView({
+					behavior: "smooth",
+				})
+			}
+		})
+	})
+</script>
+
+<style>
+	.text-blue-800 {
+		color: #0ea5e9;
+	}
+</style>
